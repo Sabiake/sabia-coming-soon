@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Sabia builds modern digital experiences, websites, branding systems, and scalable client platforms designed for growth."
+    content="Sabia builds modern digital experiences, scalable platforms, websites, branding systems, and client experiences designed for ambitious businesses."
   />
 
   <meta name="robots" content="index, follow" />
@@ -16,10 +16,15 @@
   <meta property="og:title" content="Sabia — Clarity, Built for Growth." />
   <meta
     property="og:description"
-    content="Modern websites, branding, digital growth, and scalable client experiences."
+    content="Modern digital experiences, scalable platforms, websites, branding systems, and client experiences."
   />
   <meta property="og:type" content="website" />
-<meta name="google-site-verification" content="HlgF6TktR66_uXDMovWAPzzjl93rPuMnGxU4w60AZJM" />
+
+  <meta
+    name="google-site-verification"
+    content="HlgF6TktR66_uXDMovWAPzzjl93rPuMnGxU4w60AZJM"
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -29,208 +34,489 @@
   />
 
   <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(10, 10, 10, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --muted: #a1a1aa;
+      --soft: #71717a;
+      --primary: #dc2626;
+      --primary-light: #ef4444;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #050505;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
     }
 
-    .bg {
-      position: absolute;
+    /* BACKGROUND IMAGE */
+
+    .bg-image {
+      position: fixed;
       inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(220, 38, 38, 0.2), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(239, 68, 68, 0.15), transparent 30%);
-      z-index: 0;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.68),
+          rgba(0,0,0,0.78)
+        ),
+        url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop');
+
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.12);
+      animation: zoomOut 18s ease forwards;
+      z-index: -3;
     }
+
+    @keyframes zoomOut {
+      from {
+        transform: scale(1.12);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* GLOW OVERLAYS */
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at top left,
+          rgba(220,38,38,0.22),
+          transparent 28%),
+
+        radial-gradient(circle at bottom right,
+          rgba(239,68,68,0.12),
+          transparent 30%);
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.03;
+      background-image:
+        radial-gradient(#ffffff 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    /* PAGE */
 
     .wrapper {
-      position: relative;
-      z-index: 1;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 24px;
+      padding: 32px 22px;
     }
 
     .card {
       width: 100%;
-      max-width: 720px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 56px 40px;
-      backdrop-filter: blur(10px);
-      text-align: center;
+      max-width: 980px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      backdrop-filter: blur(22px);
+
+      border-radius: 34px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 80px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .content {
+      padding: 64px;
+      position: relative;
+    }
+
+    /* TOP NAV */
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 90px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .logo {
-      font-size: 42px;
+      font-size: 34px;
       font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
+      letter-spacing: -0.06em;
+      line-height: 1;
     }
 
     .logo span {
-      color: #ef4444;
+      color: var(--primary-light);
     }
 
     .tagline {
-      color: #a1a1aa;
-      font-size: 14px;
-      margin-bottom: 40px;
+      font-size: 12px;
+      color: var(--soft);
+      letter-spacing: 0.08em;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 12px 18px;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.03);
+
+      color: #d4d4d8;
+
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 14px #22c55e;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 10px 16px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.05);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      font-size: 13px;
+      color: #d4d4d8;
+
+      margin-bottom: 28px;
     }
 
     h1 {
-      font-size: clamp(40px, 7vw, 72px);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 24px;
+      font-size: clamp(54px, 9vw, 104px);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      margin-bottom: 30px;
+      font-weight: 800;
     }
 
-    .accent {
-      color: #ef4444;
+    .gradient {
+      background: linear-gradient(
+        to right,
+        #ffffff,
+        #fca5a5
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    p {
-      color: #a1a1aa;
-      font-size: 16px;
-      line-height: 1.7;
-      max-width: 620px;
-      margin: 0 auto 36px;
+    .description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 42px;
     }
 
-    .email-box {
+    /* CTA */
+
+    .actions {
       display: flex;
-      gap: 12px;
+      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 32px;
     }
 
-    input {
-      flex: 1;
-      min-width: 240px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      height: 52px;
-      border-radius: 14px;
-      padding: 0 16px;
-      color: white;
-      outline: none;
-      font-size: 14px;
-    }
+    .primary-btn {
+      height: 56px;
 
-    button {
-      height: 52px;
-      border: none;
       padding: 0 24px;
-      border-radius: 14px;
-      background: #dc2626;
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: linear-gradient(
+        to bottom,
+        #ef4444,
+        #dc2626
+      );
+
       color: white;
+
+      font-size: 14px;
       font-weight: 600;
+
       cursor: pointer;
+
       transition: 0.3s ease;
     }
 
-    button:hover {
-      background: #ef4444;
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(220,38,38,0.35);
     }
 
+    .secondary-btn {
+      height: 56px;
+
+      padding: 0 22px;
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.03);
+
+      color: white;
+
+      text-decoration: none;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      transition: 0.3s ease;
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* FOOTER */
+
     .footer {
-      margin-top: 24px;
-      color: #71717a;
+      margin-top: 90px;
+
+      padding-top: 28px;
+
+      border-top: 1px solid rgba(255,255,255,0.06);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-left p {
+      color: var(--soft);
       font-size: 13px;
     }
 
     .socials {
-      margin-top: 28px;
       display: flex;
-      justify-content: center;
-      gap: 18px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .socials a {
-      color: #a1a1aa;
+      color: #d4d4d8;
       text-decoration: none;
-      transition: 0.3s ease;
       font-size: 14px;
+      transition: 0.3s ease;
     }
 
     .socials a:hover {
       color: white;
     }
 
-    @media (max-width: 640px) {
-      .card {
-        padding: 42px 24px;
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 34px 24px;
+      }
+
+      .topbar {
+        margin-bottom: 64px;
       }
 
       h1 {
-        font-size: 42px;
+        font-size: 54px;
       }
 
-      .logo {
-        font-size: 34px;
+      .description {
+        font-size: 16px;
+      }
+
+      .footer {
+        margin-top: 70px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="bg"></div>
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+  <div class="noise"></div>
 
-  <div class="wrapper">
-    <div class="card">
+  <main class="wrapper">
 
-      <div class="logo">
-        Sab<span>ia</span>
+    <section class="card">
+
+      <div class="content">
+
+        <div class="topbar">
+
+          <div class="brand">
+            <div class="logo">
+              Sab<span>ia</span>
+            </div>
+
+            <div class="tagline">
+              CLARITY, BUILT FOR GROWTH.
+            </div>
+          </div>
+
+          <div class="status">
+            <span class="dot"></span>
+            Preparing launch experience
+          </div>
+
+        </div>
+
+        <div class="hero">
+
+          <div class="badge">
+            Modern digital experiences & scalable client platforms
+          </div>
+
+          <h1>
+            Building the next
+            <span class="gradient">
+              generation
+            </span>
+            of digital presence.
+          </h1>
+
+          <p class="description">
+            Sabia is crafting a modern ecosystem for ambitious brands —
+            combining elegant web experiences, scalable client platforms,
+            branding systems, and growth-focused digital infrastructure
+            into one unified experience.
+          </p>
+
+          <div class="actions">
+
+            <button class="primary-btn">
+              Launching Soon
+            </button>
+
+            <a href="mailto:hello@sabiahq.com" class="secondary-btn">
+              hello@sabiahq.com
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="footer">
+
+          <div class="footer-left">
+            <p>© 2026 Sabia. All rights reserved.</p>
+            <p>Designed for clarity, scale, and long-term growth.</p>
+          </div>
+
+          <div class="socials">
+            <a href="#">LinkedIn</a>
+            <a href="#">X</a>
+            <a href="#">YouTube</a>
+            <a href="#">TikTok</a>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="tagline">
-        Clarity, Built for Growth.
-      </div>
+    </section>
 
-      <h1>
-        Something <span class="accent">modern</span><br />
-        is coming.
-      </h1>
-
-      <p>
-        Sabia is building modern digital experiences, websites,
-        branding systems, and scalable client platforms designed
-        for ambitious businesses and creators.
-      </p>
-
-      <div class="email-box">
-        <input type="email" placeholder="Enter your email" />
-        <button>Notify Me</button>
-      </div>
-
-      <div class="socials">
-        <a href="#">LinkedIn</a>
-        <a href="#">X</a>
-        <a href="#">YouTube</a>
-        <a href="#">TikTok</a>
-      </div>
-
-      <div class="footer">
-        © 2026 Sabia. All rights reserved.
-      </div>
-
-    </div>
-  </div>
+  </main>
 
 </body>
 </html>
