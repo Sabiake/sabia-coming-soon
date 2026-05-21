@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sabia — Clarity, Built for Growth.</title>
+
+  <meta
+    name="description"
+    content="Sabia builds modern digital experiences, websites, branding systems, and scalable client platforms designed for growth."
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Sabia — Clarity, Built for Growth." />
+  <meta
+    property="og:description"
+    content="Modern websites, branding, digital growth, and scalable client experiences."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050505;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(220, 38, 38, 0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(239, 68, 68, 0.15), transparent 30%);
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 56px 40px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .logo span {
+      color: #ef4444;
+    }
+
+    .tagline {
+      color: #a1a1aa;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 24px;
+    }
+
+    .accent {
+      color: #ef4444;
+    }
+
+    p {
+      color: #a1a1aa;
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .email-box {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 240px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      height: 52px;
+      border-radius: 14px;
+      padding: 0 16px;
+      color: white;
+      outline: none;
+      font-size: 14px;
+    }
+
+    button {
+      height: 52px;
+      border: none;
+      padding: 0 24px;
+      border-radius: 14px;
+      background: #dc2626;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ef4444;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: #71717a;
+      font-size: 13px;
+    }
+
+    .socials {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 14px;
+    }
+
+    .socials a:hover {
+      color: white;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 42px 24px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .logo {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="wrapper">
+    <div class="card">
+
+      <div class="logo">
+        Sab<span>ia</span>
+      </div>
+
+      <div class="tagline">
+        Clarity, Built for Growth.
+      </div>
+
+      <h1>
+        Something <span class="accent">modern</span><br />
+        is coming.
+      </h1>
+
+      <p>
+        Sabia is building modern digital experiences, websites,
+        branding systems, and scalable client platforms designed
+        for ambitious businesses and creators.
+      </p>
+
+      <div class="email-box">
+        <input type="email" placeholder="Enter your email" />
+        <button>Notify Me</button>
+      </div>
+
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+      </div>
+
+      <div class="footer">
+        © 2026 Sabia. All rights reserved.
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
